@@ -7,7 +7,7 @@ In this coding assignment, your task is to build a fullstack app that that integ
 See the instructions below to get the idea of how it should work.
 
 ## Backend
-The backend part should implement the provided [API spec](api-specification.yml). There is a suite of automated API tests that can help you validate the expected behavior. See the intstructions below on what to run those.
+The backend part should implement the provided [API spec](api-specification.yml). There is a suite of automated API tests that can help you validate the expected behavior. See the intstructions below on how to run those.
 
 ## Frontend
 Here's a mockup to get the idea of how the Frontend should look.
