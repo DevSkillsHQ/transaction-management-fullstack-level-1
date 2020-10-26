@@ -29,23 +29,24 @@ Feel free to tweak the UI but please make sure it includes the following:
   * Define a transaction list using an [HTML description list](https://www.w3schools.com/tags/tag_dl.asp).
 
 ## What's included 🗂
-We've added the [Account Management API](api-specification.yml) specification defined in the Open API format and an automated [Cypress](https://www.cypress.io/) test suite. The necessary npm dependencies for the tests are already defined in [package.json](package.json).
+We've added the [Account Management API](api-specification.yml) specification defined in the Open API format,a [Cypress](https://www.cypress.io/) test suite to validate the Frontend, and a Newman test suite to validate the Backend. 
 
-To make sure that your frontend part of the app works as expected, run the following:
+To make sure that your Frontend part of the app works as expected, run the following:
 ```shell script
 npm install # Installs the required dependencies
-# Launch your frontend app here
-npm run test # Spins up the backend and runs the tests
+# Launch your Backend app here
+# Launch your Frontend app here
+npm run test # Runs the Frontend tests
 ```
 Or using yarn:
 ```shell script
 yarn install # Installs the required dependencies
-# Launch your frontend app here
-yarn run test # Spins up the backend and runs the tests
+# Launch your Backend app here
+# Launch your Frontend app here
+yarn run test # Runs the Frontend tests
 ```
 
-To validate the backend, run the following:
-
+To validate the Backend, run the following:
 ```shell script
 npm install -g newman // Install the test runner
 newman run api-tests.json // Run the tests
