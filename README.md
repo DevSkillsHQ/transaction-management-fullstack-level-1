@@ -34,15 +34,13 @@ We've added the [Account Management API](api-specification.yml) specification de
 To make sure that your Frontend part of the app works as expected, run the following:
 ```shell script
 npm install # Installs the required dependencies
-# Launch your Backend app here
-# Launch your Frontend app here
+# Launch your app here
 npm run test # Runs the Frontend tests
 ```
 Or using yarn:
 ```shell script
 yarn install # Installs the required dependencies
-# Launch your Backend app here
-# Launch your Frontend app here
+# Launch your app here
 yarn run test # Runs the Frontend tests
 ```
 
