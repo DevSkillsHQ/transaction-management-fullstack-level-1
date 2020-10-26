@@ -1,8 +1,8 @@
-# Interview Assignment: Account Management Backend - Level 1
+# Interview Assignment: Account Management Fullstack - Level 1
 
 👋 Hi there!
 
-In this interview assignment, your task is to build a backend service that implements a predefined API spec.
+In this interview assignment, your task is to build a fullstack service that implements a predefined API spec.
 
 The API defines a set of operations for creating and reading account transactions. 
 
@@ -20,6 +20,7 @@ newman run api-tests.json // Run the tests
 
 ## What we're looking for ⭐️
 
+### Backend
 - **Use a SQL database as the service datastore.** We want to see how you design your database schema and SQL queries for working with the service data.
 - **Create a backend service that implements the provided API.** Make sure all predefined API tests pass. It will involve the following:
   - Handling invalid HTTP requests;
