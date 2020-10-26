@@ -2,19 +2,19 @@
 
 👋 Hi there!
 
-In this coding assignment, your task is to build a fullstack app that that integrates and implements the [Account Management API](api-specification.yml) to create and read account transactions.
+In this coding assignment, your task is to build a Fullstack app that integrates and implements the [Account Management API](api-specification.yml) to create and read account transactions.
 
 See the instructions below to get the idea of how it should work.
 
 ## Backend
-The backend part should implement the provided [API spec](api-specification.yml). There is a suite of automated API tests that can help you validate the expected behavior. See the intstructions below on how to run those.
+The backend part should implement the provided [API spec](api-specification.yml). There is a suite of automated API tests that can help you validate the expected behavior. See the instructions below on how to run them.
 
 ## Frontend
 Here's a mockup to get the idea of how the Frontend should look.
 
 ![Mockup](mockup.png)
 
-Feel free to tweak the UI but please make sure it includes the following:
+Feel free to tweak the UI but please make sure to include the following:
 
 * There's a form with two input fields (`Account ID` and `Amount`). Whenever the form is submitted, a new transaction with the collected data should be created on the server.
 * There's a list of the previously submitted transactions where each transaction should have the following messaging:
@@ -29,17 +29,17 @@ Feel free to tweak the UI but please make sure it includes the following:
   * Define a transaction list using an [HTML description list](https://www.w3schools.com/tags/tag_dl.asp).
 
 ## What's included 🗂
-We've added the [Account Management API](api-specification.yml) specification defined in the Open API format,a [Cypress](https://www.cypress.io/) test suite to validate the Frontend, and a Newman test suite to validate the Backend. 
+We've added the [Account Management API](api-specification.yml) specification defined in the Open API format, a [Cypress](https://www.cypress.io/) test suite to validate the Frontend, and a Newman test suite to validate the Backend. 
 
 To make sure that your Frontend part of the app works as expected, run the following:
 ```shell script
-npm install # Installs the required dependencies
+npm install # Installs the required test dependencies
 # Launch your app here
 npm run test # Runs the Frontend tests
 ```
 Or using yarn:
 ```shell script
-yarn install # Installs the required dependencies
+yarn install # Installs the required test dependencies
 # Launch your app here
 yarn run test # Runs the Frontend tests
 ```
@@ -56,7 +56,6 @@ newman run api-tests.json // Run the tests
 - **Use a SQL database as the service datastore.** We want to see how you design your database schema and SQL queries for working with the service data.
 - **Create a backend service that implements the provided API.** Make sure all predefined API tests pass. It will involve the following:
   - Handling invalid HTTP requests;
-  - Creating new transactions;
   - Retreiving the current account balance.
 - **Optimize the GET endpoints for speed.** When designing your service, ensure that the GET endpoints remain fast with the database growing in size.
 - **Organize your code as a set of low-coupled modules**. Avoid duplication and extract re-usable modules where it makes sense, but don't break things apart needlessly. We want to see that you can create a codebase that is easy to maintain.
