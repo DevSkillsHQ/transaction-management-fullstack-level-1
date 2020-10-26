@@ -4,7 +4,7 @@ info:
   version: 1.0.0
 components:
   schemas:
-    Amount:
+    Transaction:
       type: object
       properties:
         account_id:
@@ -15,7 +15,7 @@ components:
       required:
         - account_id
         - amount
-    Balance:
+    AccountBalance:
       type: object
       properties:
         balance:
@@ -23,21 +23,24 @@ components:
       required:
         - amount
   examples:
-    PositiveAmount:
+    TransactionWithPositiveAmount:
       value:
         account_id: '0afd02d3-6c59-46e7-b7bc-893c5e0b7ac2'
         amount: 7
-    NegativeAmount:
+    TransactionWithNegativeAmount:
       value:
         account_id: '5ae0ef78-e902-4c40-9f53-8cf910587312'
         amount: -4
-    PositiveBalance:
+    PositiveAccountBalance:
       value:
         balance: 10
+    NegativeAccountBalance:
+      value:
+        balance: -7
 paths:
   /amount:
     post:
-      summary: Updates account balance with amount.
+      summary: Creates a new transaction which updates the current account balance.
       parameters:
         - in: header
           name: Transaction-Id
@@ -51,25 +54,26 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/Amount'
+              $ref: '#/components/schemas/Transaction'
             examples:
-              PositiveAmount:
-                $ref: '#/components/examples/PositiveAmount'
-              NegativeAmount:
-                $ref: '#/components/examples/NegativeAmount'
+              TransactionWithPositiveAmount:
+                $ref: '#/components/examples/TransactionWithPositiveAmount'
+              TransactionWithNegativeAmount:
+                $ref: '#/components/examples/TransactionWithNegativeAmount'
 
       responses:
         '200':
-          description: Operation accepted.
+          description: Transaction created.
         '400':
           description: Mandatory body parameters missing or have incorrect type.
         '405':
           description: Specified HTTP method not allowed.
         '415':
           description: Specified content type not allowed.
+
   /balance/{account_id}:
     get:
-      summary: Returns current account balance.
+      summary: Returns the current account balance.
       parameters:
         - name: account_id
           in: path
@@ -85,9 +89,11 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Balance'
+                $ref: '#/components/schemas/AccountBalance'
               examples:
-                PositiveBalance:
-                  $ref: '#/components/examples/PositiveBalance'
+                PositiveAccountBalance:
+                  $ref: '#/components/examples/PositiveAccountBalance'
+                NegativeAccountBalance:
+                  $ref: '#/components/examples/NegativeAccountBalance'
         '404':
           description: Account not found.
