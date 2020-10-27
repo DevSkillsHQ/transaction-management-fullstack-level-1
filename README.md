@@ -70,8 +70,8 @@ newman run api-tests.json # Run the tests
 
 ## How to submit your solution 📬
 
-1. Commit your changes to a new branch called implementation.
-2. Create a Pull Request from implementation.
+1. Commit your changes to a new branch called `implementation`.
+2. Create a Pull Request from `implementation`.
 
 ## What to expect next 👀
 
