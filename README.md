@@ -46,8 +46,9 @@ yarn run test # Runs the Frontend tests
 
 To validate the Backend, run the following:
 ```shell script
-npm install -g newman // Install the test runner
-newman run api-tests.json // Run the tests
+npm install -g newman # Install the test runner
+# Launch your app here
+newman run api-tests.json # Run the tests
 ```
 
 ## What we're looking for ⭐️
