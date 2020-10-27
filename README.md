@@ -14,19 +14,13 @@ Here's a mockup to get the idea of how the Frontend should look.
 
 ![Mockup](mockup.png)
 
-Feel free to tweak the UI but please make sure to include the following:
+This assignment includes a test suite for the Frontend part and to make your app compatible with it please ensure the following (feel free to tweak the UI otherwise):
 
-* There's a form with two input fields (`Account ID` and `Amount`). Whenever the form is submitted, a new transaction with the collected data should be created on the server.
-* There's a list of the previously submitted transactions where each transaction should have the following messaging:
-  * When the transaction amount is > 0 : "Transferred $`{amount}` to `{account_id}`. Current `{account_id}`'s balance is `${current_account_balance}`".
-  * When the transaction amount is < 0 : "Withdrew $`{amount}` from `{account_id}`. Current `{account_id}`'s balance is `${current_account_balance}`".
-* A newly submitted transaction should appear at the top of the list.
-* This assignment comes with an automated test suite. To make it work with your app, please do the following:
-  * Add a `data-cy` attribute to the following HTML elements:
-    * Form: `<form data-cy="form" ... />`
-    * Account ID: `<input data-cy="accountId" ... />`
-    * Amount: `<input data-cy="amount" ... />`
-  * Define a transaction list using an [HTML description list](https://www.w3schools.com/tags/tag_dl.asp).
+* There's a form with two input fields: Account ID and Amount. Whenever the form is submitted, a new transaction with the collected data should be created on the server. The HTML elements must have the following attributes:
+  * Account ID: `data-type="account-id"`
+  * Amount: `data-type="amount"`
+  * Form: `data-type="transaction-form"`
+* There's a list of the previously submitted transactions. Every newly submitted transaction should appear at the top of the list. The HTML element that represents a transaction should include the following HTML attributes: `data-type=transaction`, `data-account-id={transaction-account-id}`, `data-amount={transaction-amount}`, and `data-balance={current-account-balance}`
 
 ## What's included 🗂
 We've added the [Account Management API](api-specification.yml) specification defined in the Open API format, a [Cypress](https://www.cypress.io/) test suite to validate the Frontend, and a Newman test suite to validate the Backend. 
