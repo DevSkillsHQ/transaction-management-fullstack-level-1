@@ -30,7 +30,6 @@ Before running the tests, update the `baseUrl` (where your Frontend runs) and th
 Run the tests:
 ```shell script
 npm install # Install the required test dependencies
-# Launch your app here
 npm run test:backend # Only run the Backend tests
 npm run test:frontend # Only run the Frontend tests
 npm run test # Run all tests
