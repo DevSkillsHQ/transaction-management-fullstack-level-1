@@ -38,7 +38,7 @@ npm run test # Run all tests
 Or with yarn:
 ```shell script
 yarn install # Install the required test dependencies
-yarn run test:backend # Only run the Backend  tests
+yarn run test:backend # Only run the Backend tests
 yarn run test:frontend # Only run the Frontend tests
 yarn run test # Run all tests
 ```
