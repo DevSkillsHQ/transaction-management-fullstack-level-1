@@ -17,8 +17,8 @@ Here's a mockup to get the idea of how the Frontend should look.
 This assignment includes a test suite for the Frontend part and to make your app compatible with it please ensure the following (feel free to tweak the UI otherwise):
 
 * There's a form with two input fields: Account ID and Amount. Whenever the form is submitted, a new transaction with the collected data should be created on the server. The HTML elements must have the following attributes:
-  * Account ID: `data-type="account-id"`
-  * Amount: `data-type="amount"`
+  * Account ID input field: `data-type="account-id"`
+  * Amount input field: `data-type="amount"`
   * Form: `data-type="transaction-form"`
 * There's a list of the previously submitted transactions. Every newly submitted transaction should appear at the top of the list. The HTML element that represents a transaction should include the following HTML attributes: `data-type=transaction`, `data-account-id={transaction-account-id}`, `data-amount={transaction-amount}`, and `data-balance={current-account-balance}`
 
