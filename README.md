@@ -23,26 +23,24 @@ This assignment includes a test suite for the Frontend part and to make your app
 * There's a list of the previously submitted transactions. Every newly submitted transaction should appear at the top of the list. The HTML element that represents a transaction should include the following HTML attributes: `data-type=transaction`, `data-account-id={transaction-account-id}`, `data-amount={transaction-amount}`, and `data-balance={current-account-balance}`
 
 ## What's included 🗂
-We've added the [Account Management API](api-specification.yml) specification defined in the Open API format, a [Cypress](https://www.cypress.io/) test suite to validate the Frontend, and a Newman test suite to validate the Backend. 
+We've added the [Account Management API](api-specification.yml) specification defined in the Open API format and [Cypress](https://www.cypress.io/) test suites to validate the Frontend and the Backend.
 
-To make sure that your Frontend part of the app works as expected, run the following:
+Before running the tests, update the `baseUrl` (where your Frontend runs) and the `apiUrl` (where your Backend runs) in [cypresss.json](cypresss.json).
+
+Run the tests:
 ```shell script
 npm install # Install the required test dependencies
 # Launch your app here
-npm run test # Run the Frontend tests
+npm run test:backend # Only run the Backend tests
+npm run test:frontend # Only run the Frontend tests
+npm run test # Run all tests
 ```
-Or using yarn:
+Or with yarn:
 ```shell script
 yarn install # Install the required test dependencies
-# Launch your app here
-yarn run test # Run the Frontend tests
-```
-
-To validate the Backend, run the following:
-```shell script
-npm install -g newman # Install the test runner
-# Launch your app here
-newman run api-tests.json # Run the tests
+yarn run test:backend # Only run the Backend  tests
+yarn run test:frontend # Only run the Frontend tests
+yarn run test # Run all tests
 ```
 
 ## What we're looking for ⭐️
