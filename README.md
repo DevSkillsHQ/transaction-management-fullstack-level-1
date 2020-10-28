@@ -25,7 +25,7 @@ This assignment includes a test suite for the Frontend part and to make your app
 ## What's included 🗂
 We've added the [Account Management API](api-specification.yml) specification defined in the Open API format and [Cypress](https://www.cypress.io/) test suites to validate the Frontend and the Backend.
 
-Before running the tests, update the `baseUrl` (where your Frontend runs) and the `apiUrl` (where your Backend runs) in [cypress.json](cypress.json).
+Before running the tests, update the `baseUrl` (where your Frontend runs) and the `apiUrl` (where your Backend runs) in [cypress.json](cypress.json), and then run your app.
 
 Run the tests:
 ```shell script
