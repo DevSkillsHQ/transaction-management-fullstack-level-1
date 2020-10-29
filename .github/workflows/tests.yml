@@ -1,7 +1,12 @@
-name: Fullstack tests
-on: [push]
+name: Tests
+on: 
+  push:
+    branches:
+      - '*'
+      - '!master'
+      - '!main'
 jobs:
-  cypress-run:
+  tests:
     runs-on: ubuntu-16.04
     steps:
       - name: Checkout
@@ -21,3 +26,16 @@ jobs:
         with:
           name: cypress-videos
           path: cypress/videos
+      - name: Set repo env var
+        if: always()
+        run: echo "github_repo=$GITHUB_REPOSITORY" >> $GITHUB_ENV
+      - uses: joelwmale/webhook-action@master
+        if: failure()
+        with:
+          url: https://app.devskills.co/api/assignment-status
+          body: '{"assignmentRepository": "${{ env.github_repo }}","status": "failed"}'
+      - uses: joelwmale/webhook-action@master
+        if: success()
+        with:
+          url: https://app.devskills.co/api/assignment-status
+          body: '{"assignmentRepository": "${{ env.github_repo }}","status": "passed"}'
