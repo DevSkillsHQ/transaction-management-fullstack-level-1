@@ -6,9 +6,9 @@ Both Backend and Frontend are located under `/app` .  The app builds with the `b
 
 ```json
 {
-    "build:fullstack": "cd app && build_app",
-    "start:fullstack": "cd app && run_app"
-  }
+  "build:fullstack": "cd app && build_app",
+  "start:fullstack": "cd app && run_app"
+}
 ```
 
 ## Example 2.
@@ -19,11 +19,11 @@ Frontend is located under `/frontend`.  It builds with the `build_frontend` comm
 
 ```json
 {
-		"build:backend": "cd backend && build_backend",
-    "build:frontend": "cd frontend && build_frontend",
-    "build:fullstack": "yarn run build:backend && yarn run build:frontend",
-		"start:backend": "cd backend && run_backend",
-    "start:frontend": "cd frontend && run_frontend",
-    "start:fullstack": "yarn run start:backend & yarn run start:frontend"
-  }
+  "build:backend": "cd backend && build_backend",
+  "build:frontend": "cd frontend && build_frontend",
+  "build:fullstack": "yarn run build:backend && yarn run build:frontend",
+  "start:backend": "cd backend && run_backend",
+  "start:frontend": "cd frontend && run_frontend",
+  "start:fullstack": "yarn run start:backend & yarn run start:frontend"
+}
 ```
