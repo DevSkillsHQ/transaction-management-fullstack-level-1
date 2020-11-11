@@ -83,7 +83,7 @@ yarn run test # Run all tests
 
 ## How to submit your solution 📬
 1. Update the `baseUrl` (where your Frontend runs) and the `apiUrl` (where your Backend runs) in [cypress.json](cypress.json).
-2. Update the [`build:fullstack`](package.json#L5) and [`start:fullstack`](package.json#L6) scripts in [package.json](package.json) that respectively build and run your application. 
+2. Update the [`build:fullstack`](package.json#L5) and [`start:fullstack`](package.json#L6) scripts in [package.json](package.json) that respectively build and run your application. **[See examples](examples.md)**.
 3. Commit and push your changes to a new branch called `implementation`. A new [GitHub Actions](https://docs.github.com/en/free-pro-team@latest/actions/quickstart) run will trigger automatically based on the [predefined pipeline](.github/workflows/tests.yml). The pipeline will run the `build:fullstack` and `start:fullstack` scripts from above to spin up your application and run the predefined Cypress tests against it. In case you want to troubleshoot a particular pipeline run, you can access both the video and the screenshots taken by the [upload-artifact](https://github.com/actions/upload-artifact#where-does-the-upload-go) GitHub action.
 4. Make sure your latest build has succesfully passed (you should see a green checkbox in GitHub).
 4. Create a Pull Request from `implementation`.
