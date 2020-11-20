@@ -21,12 +21,12 @@ jobs:
           start: yarn run start:fullstack
           wait-on: ${{ steps.fetchApiUrl.outputs.apiUrl }}
       - uses: actions/upload-artifact@v1
-        if: failure()
+        if: always()
         with:
           name: cypress-screenshots
           path: cypress/screenshots
       - uses: actions/upload-artifact@v1
-        if: failure()
+        if: always()
         with:
           name: cypress-videos
           path: cypress/videos
