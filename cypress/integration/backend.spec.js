@@ -4,6 +4,7 @@ describe('Account Management Backend - Level 1', () => {
 
   it('should create a transaction and fetch the updated account balance', () => {
     cy.request({ // create transaction
+      failOnStatusCode: false,
       method: 'POST',
       url: `${apiUrl}/amount`,
       headers: {
@@ -17,6 +18,7 @@ describe('Account Management Backend - Level 1', () => {
     }).then((response) => {
       expect(response.status).to.eq(200)
     }).request({ // read account balance
+      failOnStatusCode: false,
       method: 'GET',
       url: `${apiUrl}/balance/a40bcc03-6f39-418c-ad0b-97e14f522ec1`,
     }).then((response) => {
@@ -27,6 +29,7 @@ describe('Account Management Backend - Level 1', () => {
 
   it('should create transactions with negative and zero amounts', () => {
     cy.request({ // positive amount
+      failOnStatusCode: false,
       method: 'POST',
       url: `${apiUrl}/amount`,
       headers: {
@@ -40,12 +43,14 @@ describe('Account Management Backend - Level 1', () => {
     }).then((response) => {
       expect(response.status).to.eq(200)
     }).request({ // read account balance
+      failOnStatusCode: false,
       method: 'GET',
       url: `${apiUrl}/balance/0b230303-0156-45a9-b996-16574b6be525`,
     }).then((response) => {
       expect(response.status).to.eq(200)
       expect(response.body.balance).to.eq(4)
     }).request({ // negative amount
+      failOnStatusCode: false,
       method: 'POST',
       url: `${apiUrl}/amount`,
       headers: {
@@ -59,12 +64,14 @@ describe('Account Management Backend - Level 1', () => {
     }).then((response) => {
       expect(response.status).to.eq(200)
     }).request({ // read account balance
+      failOnStatusCode: false,
       method: 'GET',
       url: `${apiUrl}/balance/0b230303-0156-45a9-b996-16574b6be525`,
     }).then((response) => {
       expect(response.status).to.eq(200)
       expect(response.body.balance).to.eq(1)
     }).request({ // zero amount
+      failOnStatusCode: false,
       method: 'POST',
       url: `${apiUrl}/amount`,
       headers: {
@@ -78,6 +85,7 @@ describe('Account Management Backend - Level 1', () => {
     }).then((response) => {
       expect(response.status).to.eq(200)
     }).request({ // read account balance
+      failOnStatusCode: false,
       method: 'GET',
       url: `${apiUrl}/balance/0b230303-0156-45a9-b996-16574b6be525`,
     }).then((response) => {
