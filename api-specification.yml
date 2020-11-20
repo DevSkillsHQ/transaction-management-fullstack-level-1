@@ -38,6 +38,12 @@ components:
       value:
         balance: -7
 paths:
+  /ping:
+    get:
+      summary: Healhcheck to make sure the service is responsive.
+      responses:
+        '200':
+          description: The service is up and running.
   /amount:
     post:
       summary: Creates a new transaction which updates the current account balance.

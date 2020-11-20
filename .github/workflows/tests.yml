@@ -11,18 +11,22 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v1
+      - name: Fetch apiUrl
+        run: echo ::set-output name=apiUrl::$(jq -r .env.apiUrl cypress.json)/ping
+        id: fetchApiUrl
       - name: Run tests
         uses: cypress-io/github-action@v2
         with:
           build: yarn run build:fullstack
           start: yarn run start:fullstack
+          wait-on: ${{ steps.fetchApiUrl.outputs.apiUrl }}
       - uses: actions/upload-artifact@v1
-        if: failure()
+        if: always()
         with:
           name: cypress-screenshots
           path: cypress/screenshots
       - uses: actions/upload-artifact@v1
-        if: failure()
+        if: always()
         with:
           name: cypress-videos
           path: cypress/videos
