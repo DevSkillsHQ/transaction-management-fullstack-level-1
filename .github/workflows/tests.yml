@@ -17,19 +17,9 @@ jobs:
       - name: Run tests
         uses: cypress-io/github-action@v2
         with:
-          build: yarn run build:fullstack
-          start: yarn run start:fullstack
+          build: npm run build
+          start: npm run start
           wait-on: ${{ steps.fetchApiUrl.outputs.apiUrl }}
-      - uses: actions/upload-artifact@v1
-        if: always()
-        with:
-          name: cypress-screenshots
-          path: cypress/screenshots
-      - uses: actions/upload-artifact@v1
-        if: always()
-        with:
-          name: cypress-videos
-          path: cypress/videos
       - name: Set repo env var
         if: always()
         run: echo "github_repo=$GITHUB_REPOSITORY" >> $GITHUB_ENV

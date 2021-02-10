@@ -2,8 +2,8 @@
   "name": "account-management-fullstack-level-1",
   "version": "0.0.1",
   "scripts": {
-    "build:fullstack": "echo build your fullstack app here",
-    "start:fullstack": "echo start your fullstack app here",
+    "build": "echo build your fullstack app here",
+    "start": "echo start your fullstack app here",
     "test:backend": "cypress run --spec 'cypress/integration/backend.spec.js'",
     "test:frontend": "cypress run --spec 'cypress/integration/frontend.spec.js'",
     "test": "cypress run"
