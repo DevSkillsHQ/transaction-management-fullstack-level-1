@@ -38,8 +38,8 @@ Configure your repository. You have 2 options:
 
 1. [Import boilerplate](https://docs.devskills.co/collections/85-the-interview-process/articles/342-importing-challenge-boilerplate).
 2. Alternatively, use the manual setup:
-1. Update the `apiUrl`(where your app will run) in [cypress.json](cypress.json).
-2. Update the [`build`](package.json#L5) and [`start`](package.json#L6) scripts in [package.json](package.json) to respectively build and start your app. **[See examples](https://www.notion.so/devskills/Fullstack-991deeab9622416389fd2fd9fb41da85)**.
+    1. Update the `apiUrl`(where your app will run) in [cypress.json](cypress.json).
+    2. Update the [`build`](package.json#L5) and [`start`](package.json#L6) scripts in [package.json](package.json) to respectively build and start your app. **[See examples](https://www.notion.so/devskills/Fullstack-991deeab9622416389fd2fd9fb41da85)**.
 
 ### Running the API tests locally ⚙️
 
