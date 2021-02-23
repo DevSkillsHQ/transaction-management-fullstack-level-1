@@ -1,5 +1,5 @@
 name: Tests
-on: 
+on:
   push:
     branches:
       - '*'
@@ -14,22 +14,27 @@ jobs:
       - name: Fetch apiUrl
         run: echo ::set-output name=apiUrl::$(jq -r .env.apiUrl cypress.json)/ping
         id: fetchApiUrl
+      - name: Ensure mochawesome
+        run: 'jq -r ".[\"devDependencies\"] |= (.mochawesome = \"^6.2.2\")" package.json > package.json.tmp && mv package.json.tmp package.json'
+      - name: Install deps
+        run: npm install
+      - name: Update test reporter
+        run: 'jq -M ". + {\"reporter\": \"mochawesome\", \"reporterOptions\": { \"reportDir\": \"cypress/results\", \"overwrite\": false, \"html\": false, \"json\": true }}" cypress.json > cypress.json.tmp && mv cypress.json.tmp cypress.json'
       - name: Run tests
         uses: cypress-io/github-action@v2
         with:
           build: npm run build
           start: npm run start
           wait-on: ${{ steps.fetchApiUrl.outputs.apiUrl }}
+      - name: Fetch test results
+        if: always()
+        run: "echo ::set-output name=results::$(jq -r '[.results[].suites[].tests[] | {test: .title, result: .state}]' cypress/results/mochawesome.json)"
+        id: fetchTestResults
       - name: Set repo env var
         if: always()
         run: echo "github_repo=$GITHUB_REPOSITORY" >> $GITHUB_ENV
       - uses: joelwmale/webhook-action@master
-        if: failure()
+        if: always()
         with:
-          url: https://app.devskills.co/api/assignment-status
-          body: '{"assignmentRepository": "${{ env.github_repo }}","status": "failed"}'
-      - uses: joelwmale/webhook-action@master
-        if: success()
-        with:
-          url: https://app.devskills.co/api/assignment-status
-          body: '{"assignmentRepository": "${{ env.github_repo }}","status": "passed"}'
+          url: https://app.devskills.co/api/assignment-auto-test-results
+          body: '{"assignmentRepository": "${{ env.github_repo }}","results": [${{ steps.fetchTestResults.outputs.results }}]}'
