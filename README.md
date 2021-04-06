@@ -1,66 +1,87 @@
-# Account Management Fullstack - Level 1
+# Transaction Management Fullstack - Level 1
 
-### The task 🧩
+Your task is to **build a fullstack app** that **fulfills the [Transaction Management API](https://infra.devskills.app/transaction-management/fullstack-api/2.0.0)** and **make the provided E2E tests pass**.
 
-Your task is to build a Fullstack app that integrates and implements the [Account Management API](api-specification.yml). The API defines a set of operations for creating and reading account transactions. You can use [editor.swagger.io](https://editor.swagger.io/) to visualize the spec.
+Please agree with your hiring team regarding the tech stack choice.
 
-#### Frontend mockup 🧱
+Here's how the frontend could look:
 
-![Mockup](mockup.png)
+![Mockup](https://user-images.githubusercontent.com/1162212/112980759-905c8a00-915a-11eb-9a49-b439e119a76d.png)
 
-#### Frontend specification 📘
-* There's a form with two input fields: Account ID and Amount. Whenever the form is submitted, a new transaction with the collected data should be created on the backend, and the corresponding input fields are cleared. The HTML elements must have the following HTML attributes:
-  * Account ID input field: `data-type="account-id"`
-  * Amount input field: `data-type="amount"`
-  * Form: `data-type="transaction-form"`
-* There's a list of the previously submitted transactions. Every newly submitted transaction should appear at the top of the list. The HTML element that represents a transaction should include the following HTML attributes: `data-type=transaction`, `data-account-id={transaction-account-id}`, `data-amount={transaction-amount}`, and `data-balance={current-account-balance}`
+Feel free to tweak the UI, but please ensure that the following HTML is in place.
 
+#### The form for submitting transactions
 
-### What we expect from you ⏳
+```html
+<form data-type="transaction-form">
+  <input data-type="account-id" ... />
+  <input data-type="amount" ... />
+</form>
+```
 
-- **Commit your code to a new branch called `implementation`**.
-- **Make the provided API tests pass**. We added a set of API and Frontend tests that run every time you push to a remote branch other than master/main. See the instructions below covering how to run them locally.
-- **Document your decisions**. Extend this README.md with info about how to run your application along with any hints that will help us review your submission and better understand the decisions you made.
+Both input **fields should be cleared** after the form is submitted.
 
-#### Backend
-- **Use a SQLite database as the service datastore.** We want to see how you design your database schema and SQL queries for working with the service data. We suggest using [SQLite](https://www.sqlite.org/index.html) as it doesn't require running a DB server, which simplifies running the tests in the pipeline.
-- **Optimize the GET endpoints for speed.** When designing your service, ensure that the GET endpoints remain fast with the database growing in size.
-- **Organize your code as a set of low-coupled modules**. Avoid duplication and extract re-usable modules where it makes sense, but don't break things apart needlessly. We want to see that you can create a codebase that is easy to maintain.
+#### The transaction list
 
-#### Frontend
-- **Integrate with a REST API**. Using the provided API spec, figure out the right service endpoints to use.
-- **Implement client-side form data validation**. The API has restrictions on the allowed data format. Make sure to do the required checks client-side before sending the data to the server.
-- **Organize your code with components**. Extract components that help you avoid duplication, but don't break things apart needlessly. We want to see that you can implement the UI with sound HTML semantics.
+Every new transaction goes on **the top of the list** and should have an enclosing `<div />` with the following structure:
 
-### Before you get started ⚠️
+```html
+<div 
+     data-type="transaction"
+     data-account-id="${transaction-account-id}"
+     data-amount="${transaction-amount}"
+     data-balance="${current-account-balance}" ...>
+  ...
+</div>
+```
 
-Configure your repository. You have 2 options:
+- `${transaction-account-id}` - account id of the corresponding transaction.
+- `${transaction-amount}` - transaction amount.
+- `${current-account-balance}` - the current balance of the corresponding account right after submitting the transaction.
 
-1. [Import boilerplate](https://docs.devskills.co/collections/85-the-interview-process/articles/342-importing-challenge-boilerplate).
-2. Alternatively, use the manual setup:
-    1. Update the `apiUrl`(where your app will run) in [cypress.json](cypress.json).
-    2. Update the [`build`](package.json#L5) and [`start`](package.json#L6) scripts in [package.json](package.json) to respectively build and start your app. **[See examples](https://www.notion.so/devskills/Fullstack-991deeab9622416389fd2fd9fb41da85)**.
+## Before you get started
 
-### Running the API tests locally ⚙️
+### Import boilerplate
 
-* Run `npm install`.
-* Run your app.
-* Run the tests with `npm run test`.
+Follow [this link](https://docs.devskills.co/collections/85-the-interview-process/articles/342-importing-challenge-boilerplate) to get the boilerplate code for your tech stack to configure a minimal setup for running the E2E tests.
 
-### When you're done ✅
+<details>
+<summary>Alternatively, use the manual setup.</summary>
 
-1. Create a Pull Request from the `implementation` branch.
-2. Answer the questions you get on your Pull Request.
+1. Update the `baseUrl` (where your frontend runs) in [cypress.json](cypress.json).
+2. Update the `apiUrl` (where your backend runs) in [cypress.json](cypress.json).
+3. Update the [`build`](package.json#L5) and [`start`](package.json#L6) scripts in [package.json](package.json) to respectively build and start your app.
 
-**If you don't have enough time to finish**, push what you got and describe how you'd do the rest in a `.md` file.
+</details>
 
-### Need help? 🤯
+### Get familiar with the API
 
-Start with [Troubleshooting](https://www.notion.so/Troubleshooting-d18bdb5d2ac341bb82b21f0ba8fb9546), and in case it didn't help, create a new GitHub issue. A human will help you.
+Follow [this link](https://infra.devskills.app/transaction-management/fullstack-api/2.0.0) to find the API documentation. Feel free to try out a few requests to better understand how the API should work.
 
-### Time estimate ⏳
+### Try running the E2E tests locally
 
-About **4 hours**.
+```bash
+npm install
+npm run build # should build your fullstack app
+npm run start # should start your fullstack app
+npm run test
+```
+
+## What we expect from you
+
+1. Make the provided E2E tests pass.
+2. Keep server data in memory.
+3. Push your code to the new `implementation` branch. We encourage you to commit and push your changes regularly as it's a good way for you to showcase your thinking process.
+4. Create a new pull request, but please **do not merge it**.
+5. Await further instructions from the hiring team.
+
+## Need help?
+
+Start with [Troubleshooting](https://www.notion.so/Troubleshooting-d18bdb5d2ac341bb82b21f0ba8fb9546), and in case it didn't help, create a new GitHub issue. We'll get back to you.
+
+## Time estimate
+
+**1-3 hours depending on your experience level**.
 
 ---
 
