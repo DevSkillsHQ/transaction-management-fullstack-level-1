@@ -81,7 +81,7 @@ Start with [Troubleshooting](https://www.notion.so/Troubleshooting-d18bdb5d2ac34
 
 ## Time estimate
 
-**1-3 hours depending on your experience level**.
+**1-3 hours** depending on your experience level.
 
 ---
 
