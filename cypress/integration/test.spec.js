@@ -29,15 +29,16 @@ describe('Transaction Management Fullstack - Level 1', () => {
       expect(response.status).to.eq(201)
       expect(response.body.transaction_id).to.not.be.undefined
       transactionId = response.body.transaction_id
-    }).request({
-      failOnStatusCode: false,
-      method: 'GET',
-      url: `${apiUrl}/transaction/${transactionId}`,
-    }).then((response) => {
-      expect(response.status).to.eq(200)
-      expect(response.body.transaction_id).to.eq(transactionId)
-      expect(response.body.account_id).to.eq(accountId)
-      expect(response.body.amount).to.eq(7)
+      cy.request({
+        failOnStatusCode: false,
+        method: 'GET',
+        url: `${apiUrl}/transaction/${transactionId}`,
+      }).then((response) => {
+        expect(response.status).to.eq(200)
+        expect(response.body.transaction_id).to.eq(transactionId)
+        expect(response.body.account_id).to.eq(accountId)
+        expect(response.body.amount).to.eq(7)
+      })
     }).request({
       failOnStatusCode: false,
       method: 'GET',
