@@ -11,6 +11,16 @@ function uuid() {
 
 describe('Transaction Management Fullstack - Level 1', () => {
 
+  it('Provides a functional healthcheck', () => {
+    cy.request({
+      failOnStatusCode: false,
+      method: 'GET',
+      url: `${apiUrl}/ping`,
+    }).then((response) => {
+      expect(response.status).to.eq(200)
+    })
+  })   
+  
   it('should create a transaction, read it, and fetch the updated account balance', () => {
     const accountId = uuid()
     let transactionId
