@@ -27,7 +27,7 @@ describe('Transaction Management Fullstack - Level 1', () => {
     cy.request({
       failOnStatusCode: false,
       method: 'POST',
-      url: `${apiUrl}/transaction`,
+      url: `${apiUrl}/transactions`,
       headers: {
         "Content-Type": "application/json"
       },
@@ -42,7 +42,7 @@ describe('Transaction Management Fullstack - Level 1', () => {
       cy.request({
         failOnStatusCode: false,
         method: 'GET',
-        url: `${apiUrl}/transaction/${transactionId}`,
+        url: `${apiUrl}/transactions/${transactionId}`,
       }).then((response) => {
         expect(response.status).to.eq(200)
         expect(response.body.transaction_id).to.eq(transactionId)
@@ -67,7 +67,7 @@ describe('Transaction Management Fullstack - Level 1', () => {
     cy.request({
       failOnStatusCode: false,
       method: 'POST',
-      url: `${apiUrl}/transaction`,
+      url: `${apiUrl}/transactions`,
       headers: {
         "Content-Type": "application/json",
       },
@@ -90,7 +90,7 @@ describe('Transaction Management Fullstack - Level 1', () => {
     }).request({
       failOnStatusCode: false,
       method: 'POST',
-      url: `${apiUrl}/transaction`,
+      url: `${apiUrl}/transactions`,
       headers: {
         "Content-Type": "application/json",
       },
@@ -113,7 +113,7 @@ describe('Transaction Management Fullstack - Level 1', () => {
     }).request({
       failOnStatusCode: false,
       method: 'POST',
-      url: `${apiUrl}/transaction`,
+      url: `${apiUrl}/transactions`,
       headers: {
         "Content-Type": "application/json",
       },
