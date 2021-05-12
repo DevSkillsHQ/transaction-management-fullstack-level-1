@@ -1,12 +1,12 @@
 # Transaction Management Fullstack - Level 1
 
-Your task is to **build a fullstack app** that **fulfills the [Transaction Management API](https://infra.devskills.app/transaction-management/fullstack-api/2.0.0)** and **make the provided E2E tests pass**.
+Your task is to **build a fullstack app** that **fulfills the [Transaction Management API](https://infra.devskills.app/transaction-management/api/3.0.0)** and **make the provided E2E tests pass**.
 
 Please agree with your hiring team regarding the tech stack choice.
 
 Here's how the frontend could look:
 
-![Mockup](https://user-images.githubusercontent.com/1162212/112980759-905c8a00-915a-11eb-9a49-b439e119a76d.png)
+![Mockup](https://user-images.githubusercontent.com/1162212/116609549-cbf29b80-a934-11eb-876e-6d5c20061f13.png)
 
 Feel free to tweak the UI, but please ensure that the following HTML is in place.
 
@@ -37,7 +37,7 @@ Every new transaction goes on **the top of the list** and should have an enclosi
 
 - `${transaction-account-id}` - account id of the corresponding transaction.
 - `${transaction-amount}` - transaction amount.
-- `${current-account-balance}` - the current balance of the corresponding account right after submitting the transaction.
+- `${current-account-balance}` - the current account balance right after submitting the transaction (only needed to be initialized for the transactions submitted from the current client).
 
 ## Before you get started
 
@@ -56,7 +56,7 @@ Follow [this link](https://docs.devskills.co/collections/85-the-interview-proces
 
 ### Get familiar with the API
 
-Follow [this link](https://infra.devskills.app/transaction-management/fullstack-api/2.0.0) to find the API documentation. Feel free to try out a few requests to better understand how the API should work.
+Follow [this link](https://infra.devskills.app/transaction-management/api/3.0.0) to find the API documentation. Feel free to try out a few requests to better understand how the API should work.
 
 ### Try running the E2E tests locally
 
