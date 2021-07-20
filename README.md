@@ -1,6 +1,6 @@
 # Transaction Management Fullstack - Level 1
 
-Your task is to **build a fullstack app** that **fulfills the [Transaction Management API](https://infra.devskills.app/transaction-management/api/3.0.0)** and **make the provided E2E tests pass**.
+Your task is to **build a fullstack app** that **fulfills the [Transaction Management API](https://infra.devskills.app/transaction-management/api/3.1.0)** and **make the provided E2E tests pass**.
 
 Please agree with your hiring team regarding the tech stack choice.
 
@@ -56,7 +56,7 @@ Follow [this link](https://docs.devskills.co/collections/85-the-interview-proces
 
 ### Get familiar with the API
 
-Follow [this link](https://infra.devskills.app/transaction-management/api/3.0.0) to find the API documentation. Feel free to try out a few requests to better understand how the API should work.
+Follow [this link](https://infra.devskills.app/transaction-management/api/3.1.0) to find the API documentation. Feel free to try out a few requests to better understand how the API should work.
 
 ### Try running the E2E tests locally
 
