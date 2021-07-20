@@ -13,9 +13,10 @@ Feel free to tweak the UI, but please ensure that the following HTML is in place
 #### The form for submitting transactions
 
 ```html
-<form data-type="transaction-form">
+<form ... >
   <input data-type="account-id" ... />
   <input data-type="amount" ... />
+  <input data-type="transaction-submit" type="submit" ... />
 </form>
 ```
 
