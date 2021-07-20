@@ -9,8 +9,8 @@ function uuid() {
   });
 }
 
-describe('Transaction Management Fullstack - Level 1', () => {
-
+describe('Transaction Management Backend - Level 1', () => {
+  
   it('Provides a functional healthcheck', () => {
     cy.request({
       failOnStatusCode: false,
@@ -20,7 +20,7 @@ describe('Transaction Management Fullstack - Level 1', () => {
       expect(response.status).to.eq(200)
     })
   })   
-  
+
   it('should create a transaction, read it, and fetch the updated account balance', () => {
     const accountId = uuid()
     let transactionId
@@ -138,7 +138,7 @@ describe('Transaction Management Fullstack - Level 1', () => {
 })
 
 describe('Transaction Management Frontend - Level 1', () => {
-  it('The app can handle the happy case scenarios', () => {
+  it('The app can submit new transactions and show the historical ones', () => {
     cy.visit('/')
 
     // submit a transaction & verify the position on the list
@@ -147,8 +147,16 @@ describe('Transaction Management Frontend - Level 1', () => {
     const balance = 30
     cy.get('[data-type=account-id]').type(accountId)
     cy.get('[data-type=amount]').type(amount)
-    cy.get('[data-type=transaction-form]').submit()
+    cy.get('[data-type=transaction-submit]').click()
     cy.get(`[data-type=transaction][data-account-id=${accountId}][data-amount=${amount}][data-balance=${balance}]`).should('exist')
+
+    // submit a new transaction to the same account and verify the balance
+    const newAmount = 7
+    const newBalance = 37
+    cy.get('[data-type=account-id]').type(accountId)
+    cy.get('[data-type=amount]').type(newAmount)
+    cy.get('[data-type=transaction-submit]').click()
+    cy.get(`[data-type=transaction][data-account-id=${accountId}][data-amount=${newAmount}][data-balance=${newBalance}]`).should('exist')
 
     // submit another transaction & verify the position on the list
     const anotherAccountId = uuid()
@@ -156,15 +164,15 @@ describe('Transaction Management Frontend - Level 1', () => {
     const anotherBalance = 7
     cy.get('[data-type=account-id]').type(anotherAccountId)
     cy.get('[data-type=amount]').type(anotherAmount)
-    cy.get('[data-type=transaction-form]').submit()
+    cy.get('[data-type=transaction-submit]').click()
     cy.get(`[data-type=transaction][data-account-id=${anotherAccountId}][data-amount=${anotherAmount}][data-balance=${anotherBalance}]`).should('exist')
 
     // submit a transaction with a negative amount & verify the position on the list
-    const negativeAmount = -7
-    const negativeBalance = 0
+    const negativeAmount = -5
+    const negativeBalance = 2
     cy.get('[data-type=account-id]').type(anotherAccountId)
     cy.get('[data-type=amount]').type(negativeAmount)
-    cy.get('[data-type=transaction-form]').submit()
+    cy.get('[data-type=transaction-submit]').click()
     cy.get(`[data-type=transaction][data-account-id=${anotherAccountId}][data-amount=${negativeAmount}][data-balance=${negativeBalance}]`).should('exist')
   })
 })
