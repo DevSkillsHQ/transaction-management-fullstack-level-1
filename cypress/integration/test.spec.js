@@ -137,7 +137,7 @@ describe('Transaction Management Backend - Level 1', () => {
   })
 })
 
-describe('Transaction Management Frontend - Level 3', () => {
+describe('Transaction Management Frontend - Level 1', () => {
   it('The app can submit new transactions and show the historical ones', () => {
     cy.visit('/')
 
