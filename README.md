@@ -1,12 +1,18 @@
-# Transaction Management Fullstack - Level 1
+# Accounting Fullstack - Level 1
 
-Your task is to **build a fullstack app** that **fulfills the [Transaction Management API](https://infra.devskills.app/transaction-management/api/3.1.0)** and **make the provided E2E tests pass**.
+Your task is to build a fullstack app that allows to record financial transactions and view the transaction history.
 
 Please agree with your hiring team regarding the tech stack choice.
 
-Here's how the frontend could look:
+The backend should implement the [Accounting API](https://infra.devskills.app/accounting/api/3.1.0).
 
-![Mockup](https://user-images.githubusercontent.com/1162212/116609549-cbf29b80-a934-11eb-876e-6d5c20061f13.png)
+The frontend should consist of a form for submitting transactions and a transaction list.
+
+Transaction list displays the withdrawn or deposited amount for each transaction along with the affected account id. It also shows the current balance for the last submitted transaction.
+
+Here's the UI mockup with hints:
+
+![Accounting App Frontend](https://user-images.githubusercontent.com/450319/139797772-4e4b2744-447c-411f-9b04-7028ba5e89a1.png)
 
 Feel free to tweak the UI, but please ensure that the following HTML is in place.
 
@@ -22,7 +28,7 @@ Feel free to tweak the UI, but please ensure that the following HTML is in place
 
 Both input **fields should be cleared** after the form is submitted.
 
-#### The transaction list
+#### Transaction list
 
 Every new transaction goes on **the top of the list** and should have an enclosing `<div />` with the following structure:
 
@@ -38,7 +44,7 @@ Every new transaction goes on **the top of the list** and should have an enclosi
 
 - `${transaction-account-id}` - account id of the corresponding transaction.
 - `${transaction-amount}` - transaction amount.
-- `${current-account-balance}` - the current account balance right after submitting the transaction (only needed to be initialized for the transactions submitted from the current client).
+- `${current-account-balance}` - the current account balance right after submitting the transaction (only show for the last submitted transaction).
 
 ## Before you get started
 
