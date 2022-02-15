@@ -1,4 +1,4 @@
-# Accounting Fullstack - Level 1
+# Transaction Management Fullstack - Level 1
 
 Your task is to build a fullstack app that allows to record financial transactions and view the transaction history.
 
