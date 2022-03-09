@@ -60,7 +60,7 @@ describe('Transaction Management Backend - Level 1', () => {
     })
   })
 
-  it('should create transactions with negative and zero amounts', () => {
+  it('should create transactions with negative amounts', () => {
     const accountId = uuid()
     let transactionId
 
@@ -103,29 +103,6 @@ describe('Transaction Management Backend - Level 1', () => {
       expect(response.body.transaction_id).to.not.be.undefined
       transactionId = response.body.transaction_id
     }).request({ // read account balance
-      failOnStatusCode: false,
-      method: 'GET',
-      url: `${apiUrl}/accounts/${accountId}`,
-    }).then((response) => {
-      expect(response.status).to.eq(200)
-      expect(response.body.account_id).to.eq(accountId)
-      expect(response.body.balance).to.eq(1)
-    }).request({
-      failOnStatusCode: false,
-      method: 'POST',
-      url: `${apiUrl}/transactions`,
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: {
-        account_id: accountId,
-        amount: 0
-      }
-    }).then((response) => {
-      expect(response.status).to.eq(201)
-      expect(response.body.transaction_id).to.not.be.undefined
-      transactionId = response.body.transaction_id
-    }).request({
       failOnStatusCode: false,
       method: 'GET',
       url: `${apiUrl}/accounts/${accountId}`,
