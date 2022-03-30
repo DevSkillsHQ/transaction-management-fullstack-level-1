@@ -46,7 +46,14 @@ jobs:
       - name: Set repo env var
         if: always()
         run: echo "github_repo=$GITHUB_REPOSITORY" >> $GITHUB_ENV
-      - uses: joelwmale/webhook-action@master
+      - name: Publish test results. Attempt 1.
+        uses: joelwmale/webhook-action@master
+        if: always()
+        with:
+          url: https://app.devskills.co/api/assignment-auto-test-results
+          body: '{"assignmentRepository": "${{ env.github_repo }}","results": [${{ steps.fetchTestResults.outputs.results }}]}'
+      - name: Publish test results. Attempt 2.
+        uses: joelwmale/webhook-action@master
         if: always()
         with:
           url: https://app.devskills.co/api/assignment-auto-test-results
