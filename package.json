@@ -1,12 +1,12 @@
 {
   "name": "account-management-fullstack-level-1",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "scripts": {
     "build": "echo build your fullstack app here",
     "start": "echo start your fullstack app here",
     "test": "cypress run"
   },
   "devDependencies": {
-    "cypress": "^8.6.0"
+    "cypress": "^9.7.0"
   }
 }
