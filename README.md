@@ -58,7 +58,7 @@ We have created a set of boilerplate projects for different tech stacks to help 
 
 To import a boilerplate project:
 
-1. Check out [this list](https://help.alvalabs.io/en/articles/7972852-supported-coding-test-boilerplates) to pick a desired boilerplate and copy its name (e.g., `frontend-boilerplate-react-nextjs`).
+1. Check out [this list](https://help.alvalabs.io/en/articles/7972852-supported-coding-test-boilerplates) to pick a desired boilerplate and copy its name (e.g., `fullstack-boilerplate-flask-react`).
 2. Go to the "Actions" tab of your GitHub repository and select the "Setup boilerplate" workflow in the left side panel.
 3. In the "Run workflow" dropdown, paste the previously copied boilerplate name along with the branch name where you want the boilerplate to be imported (e.g., `implementation`) and click the "Run workflow" button.
 4. After the workflow has finished, your selected boilerplate will be imported to the specified branch, and you can continue with your task there.
