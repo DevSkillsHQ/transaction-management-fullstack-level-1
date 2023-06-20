@@ -50,14 +50,21 @@ Every new transaction goes on **the top of the list** and should have an enclosi
 
 ### If you run into a problem
 
-Need help? Head over to [our community on GitHub](https://github.com/orgs/DevSkillsHQ/discussions/categories/help) to get assistance.
+Head over to [our community on GitHub](https://github.com/orgs/DevSkillsHQ/discussions/categories/help) to get assistance.
 
-### Import boilerplate
+### Import a boilerplate project
 
-Follow [this link](https://docs.devskills.co/collections/85-the-interview-process/articles/342-importing-challenge-boilerplate) to get the boilerplate code for your tech stack to configure a minimal setup for running the E2E tests.
+We have created a set of boilerplate projects for different tech stacks to help you get started quicker.
+
+To import a boilerplate project:
+
+1. Check out [this list](https://help.alvalabs.io/en/articles/7972852-supported-coding-test-boilerplates) to pick a desired boilerplate and copy its name (e.g., `fullstack-boilerplate-flask-react`).
+2. Go to the "Actions" tab of your GitHub repository and select the "Setup boilerplate" workflow in the left side panel.
+3. In the "Run workflow" dropdown, paste the previously copied boilerplate name along with the branch name where you want the boilerplate to be imported (e.g., `implementation`) and click the "Run workflow" button.
+4. After the workflow has finished, your selected boilerplate will be imported to the specified branch, and you can continue with your task there.
 
 <details>
-<summary>Alternatively, use the manual setup.</summary>
+<summary>If you instead want to use a custom setup, complete the steps below to make the E2E tests run correctly.</summary>
 
 1. Update the `baseUrl` (where your frontend runs) in [cypress.json](cypress.json).
 2. Update the `apiUrl` (where your backend runs) in [cypress.json](cypress.json).
@@ -89,12 +96,10 @@ npm run test
 
 ## Time estimate
 
-**1-3 hours** depending on your experience level + the time to set up the project/environment (go with one of the provided boilerplates to move faster).
+Between **1-3 hours** depending on your experience level + the time to set up the project/environment (go with one of the provided boilerplates to move quicker).
 
 Also, there is no countdown. The estimate is for you to plan your time.
 
 ---
 
-Made by [DevSkills](https://devskills.co).
-
-How was your experience? **[Don't hesitate to give us a shout](https://github.com/orgs/DevSkillsHQ/discussions/categories/feedback)**.
+Authored by [Alva Labs](https://www.alvalabs.io/).
