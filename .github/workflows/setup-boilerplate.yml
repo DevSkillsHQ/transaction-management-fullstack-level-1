@@ -17,7 +17,7 @@ on:
 jobs:
   setup-boilerplate:
     name: Setup boilerplate
-    uses: DevSkillsHQ/setup-boilerplate-workflow/.github/workflows/setup-boilerplate.yml@main
+    uses: DevSkillsHQ/setup-boilerplate-workflow/.github/workflows/setup-boilerplate.yml@cypress12
     permissions:
       contents: write
     with:
