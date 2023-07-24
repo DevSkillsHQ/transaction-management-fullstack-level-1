@@ -72,6 +72,17 @@ To import a boilerplate project:
 
 </details>
 
+### Working in a Gitpod environment
+
+If you prefer to avoid installing dependencies like Docker or npm on your local machine, Gitpod offers a handy solution. It provides free access to preconfigured, in-browser IDEs that are ready for immediate use.
+
+To utilize this for your repository, here's what you need to do:
+
+1. Go to 'https://gitpod.io/#your-repo-url', replacing 'your-repo-url' with the actual URL of your repository. For instance, 'https://gitpod.io/#https://github.com/octocat/Hello-World'.
+2. Authenticate using your GitHub account.
+
+By following these steps, you'll quickly find yourself in an environment tailored for your coding test.
+
 ### Get familiar with the API
 
 Follow [this link](https://infra.devskills.app/transaction-management/api/3.1.0) to find the API documentation.
