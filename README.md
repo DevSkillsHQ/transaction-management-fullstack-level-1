@@ -74,7 +74,7 @@ To import a boilerplate project:
 
 ### Working in a Gitpod environment
 
-If you prefer to avoid installing dependencies like Docker or npm on your local machine, Gitpod offers a handy solution. It provides free access to preconfigured, in-browser IDEs that are ready for immediate use.
+If you prefer to avoid installing dependencies like npm on your local machine, Gitpod offers a handy solution. It provides free access to preconfigured, in-browser IDEs that are ready for immediate use.
 
 To utilize this for your repository, here's what you need to do:
 
