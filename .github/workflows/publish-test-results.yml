@@ -13,3 +13,5 @@ jobs:
     uses: DevSkillsHQ/publish-test-results-workflow/.github/workflows/publish-test-results.yml@main
     permissions:
       contents: write
+    secrets:
+      AUTO_SCORE_TOKEN: ${{ secrets.AUTO_SCORE_TOKEN }}
