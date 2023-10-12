@@ -1,0 +1,19 @@
+{
+	"name": "Alva Universal Image",
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"ms-vsliveshare.vsliveshare"
+			]
+		}
+	},
+	"features": {
+		"ghcr.io/rocker-org/devcontainer-features/apt-packages:1": {
+			"packages": "xvfb,libnss3-dev,libatk1.0-0,libatk-bridge2.0-0,libgtk-3-0,libgbm-dev"
+		},
+		"ghcr.io/devcontainers/features/java:1": {
+			"version": "17.0.8-amzn"
+		}
+	},
+	"postCreateCommand": "sdk default java 17.0.8-amzn"
+}
