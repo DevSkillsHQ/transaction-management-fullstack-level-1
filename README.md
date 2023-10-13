@@ -46,6 +46,11 @@ Every new transaction goes on **the top of the list** and should have an enclosi
 - `${transaction-amount}` - transaction amount.
 - `${current-account-balance}` - the current account balance right after submitting the transaction (only show for the last submitted transaction).
 
+## Additional requirements
+
+1. Do your best to make the [provided E2E tests](cypress/e2e/test.cy.js) pass.
+2. Keep the server data in memory.
+
 ## Getting started
 
 <details>
@@ -74,7 +79,6 @@ Every new transaction goes on **the top of the list** and should have an enclosi
   > 1. Update the `baseUrl` (where your frontend runs) in [cypress.config.js](cypress.config.js).
   > 2. Update the `apiUrl` (where your backend runs) in [cypress.config.js](cypress.config.js).
   > 3. Update the [`build`](package.json#L5) and [`start`](package.json#L6) scripts in [package.json](package.json) to respectively build and start your app.
-
   
 </details>
 
@@ -103,18 +107,14 @@ Every new transaction goes on **the top of the list** and should have an enclosi
 
 ## Submitting your solution for review
 
-To submit your solution, ensure the following:
-
-1. Do your best to make the provided E2E tests pass.
-2. Keep server data in memory.
-3. Push your code to the `implementation` branch.
-4. Create a new pull request **without merging it**.
+1. Create a new `implementation` branch on this repository and push your code there.
+2. Create a new pull request from `implementation` **without merging it**.
 5. Document the tech decisions you've made by creating a new review on your PR ([see how](https://www.loom.com/share/94ae305e7fbf45d592099ac9f40d4274)).
 6. Await further instructions from the hiring team.
 
 ## Time estimate
 
-Between **1-3 hours** + the time to set up the project/environment (go with one of the provided project starters to move quickly).
+Between **1-3 hours** + the time to set up the project/environment (we suggest you to import one of the provided project starters to save time).
 
 However, there is no countdown. The estimate is for you to plan your time.
 
