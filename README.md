@@ -96,7 +96,7 @@ Every new transaction goes on **the top of the list** and should have an enclosi
 <details>
   <summary>Running the E2E tests</summary>
 
-  > Before executing the tests, ensure [Node](https://nodejs.org/en) is installed and your app is running.
+  > ⚠️ Before executing the tests, ensure [Node](https://nodejs.org/en) is installed and your app is running.
 
   ```bash
   npm install
