@@ -4,7 +4,7 @@ Your task is to build a fullstack app that allows the recording of financial tra
 
 Please agree with your hiring team regarding the tech stack choice.
 
-The backend should implement the [Accounting API](https://infra.devskills.app/accounting/api/3.1.0).
+The backend should implement the [Accounting API](https://infra.devskills.app/accounting/api/3.1.0), which is defined in the [Open API](https://www.openapis.org/) format.
 
 The frontend should consist of a form for submitting transactions and a transaction list.
 
