@@ -56,7 +56,11 @@ Every new transaction goes on **the top of the list** and should have an enclosi
 <details>
   <summary>If you run into a problem</summary>
   
-  Navigate to [our community on GitHub](https://github.com/orgs/DevSkillsHQ/discussions/categories/help) to get assistance.
+1. **Open a [GitHub Issue](https:\/\/docs.github.com\/en\/issues\/tracking-your-work-with-issues\/creating-an-issue):** Simply go to the "Issues" tab in this repository and click on "New issue".
+2. **Describe Your Issue:** Briefly describe the problem you are encountering. Include key details like error messages or steps to reproduce the issue. This helps us understand and resolve your concern more efficiently.
+3. **Automated Support:** Initially, our support bot will try to resolve your issue. If it is unable to help, a member of the Alva team will be notified and will step in to assist you.
+
+**Note:** it is important to close the issue once your problem is resolved, open issues may indicate to the hiring team that your assignment is not yet ready for review.
 
 </details>
 
