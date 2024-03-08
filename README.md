@@ -381,7 +381,7 @@ Every new transaction goes on **the top of the list** and should have an enclosi
 
 ### Solution expectations
 
-1. Do your best to make the [provided E2E tests](cypress/e2e/test.cy.js) pass.
+1. Do your best to make the [provided E2E tests](cypress/e2e/test.cy.js) pass. Check out [this tutorial](https://help.alvalabs.io/en/articles/9028831-how-to-work-with-cypress) to learn how to execute these tests and analyze the results.
 2. Keep the server data in memory.
 
 <!--TASK_INSTRUCTIONS_END-->
