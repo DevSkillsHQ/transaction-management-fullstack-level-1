@@ -21,6 +21,7 @@ on:
         - fullstack-boilerplate-java-springboot-vue-typescript
         - fullstack-boilerplate-php-laravel-vue
         - fullstack-boilerplate-java-springboot-react-typescript
+        - fullstack-boilerplate-java-springboot-angular
         required: true
       branch-name:
         type: string
