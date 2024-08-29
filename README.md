@@ -8,15 +8,13 @@ Between 1 and 3 hours, plus the time to set up the codebase.
 
 ## Mandatory steps before you get started
 
-1. Set up your codebase according to [either of the outlined options](https://help.alvalabs.io/en/articles/9028914-how-to-set-up-the-codebase-for-your-coding-test) for your coding test.
+1. You should already have your project setup from the coding test start page but if not check out [this guide here](https://help.alvalabs.io/en/articles/9028914-how-to-set-up-the-codebase-for-your-coding-test) for more information.
 2. Learn [how to get help](https://help.alvalabs.io/en/articles/9028899-how-to-ask-for-help-with-coding-tests) if you run into an issue with your coding test.
 
 ## The task
 
 <!--TASK_INSTRUCTIONS_START-->
 Your task is to build a fullstack app that allows the recording of financial transactions and viewing the transaction history.
-
-Please agree with your hiring team regarding the tech stack choice.
 
 The backend should implement the [Accounting API](https://infra.devskills.app/accounting/api/3.1.0), which is defined in the [Open API](https://www.openapis.org/) format.
 
