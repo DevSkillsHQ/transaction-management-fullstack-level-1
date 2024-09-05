@@ -15,5 +15,5 @@
 			"version": "21"
 		}
 	},
-	"postCreateCommand": "sdk default java 17"
+	"postCreateCommand": "sdk default java 21"
 }
