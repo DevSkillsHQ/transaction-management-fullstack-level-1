@@ -12,8 +12,8 @@
 			"packages": "xvfb,libnss3-dev,libatk1.0-0,libatk-bridge2.0-0,libgtk-3-0,libgbm-dev"
 		},
 		"ghcr.io/devcontainers/features/java:1": {
-			"version": "17"
+			"version": "21"
 		}
 	},
-	"postCreateCommand": "sdk default java 17"
+	"postCreateCommand": "sdk default java 21"
 }
