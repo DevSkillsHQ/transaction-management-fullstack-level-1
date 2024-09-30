@@ -383,6 +383,12 @@ Every new transaction goes on **the top of the list** and should have an enclosi
 2. Keep the server data in memory.
 
 <!--TASK_INSTRUCTIONS_END-->
+
+### Codespace CORS issue
+If you are using Codespace, you might encounter CORS related issue because the backend project's port is private by default. To resolve this, make the port public by running the following command inside the Codespace. Replace <PORT> with the actual port number your backend project is using.
+```
+gh codespace ports visibility <PORT>:public -c $CODESPACE_NAME
+```
 ## When you are done
 
 1. [Create a new Pull Request](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request) from the branch where you've committed your solution to the default branch of this repository. **Please do not merge the created Pull Request**.
