@@ -23,6 +23,8 @@ on:
         - fullstack-boilerplate-java-springboot-react-typescript
         - fullstack-boilerplate-java-springboot-angular
         - fullstack-boilerplate-php-react-nextjs
+        - fullstack-boilerplate-dotnet-react
+        - fullstack-boilerplate-dotnet-vue
         required: true
       branch-name:
         type: string
