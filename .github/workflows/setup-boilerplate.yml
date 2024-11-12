@@ -25,6 +25,8 @@ on:
         - fullstack-boilerplate-php-react-nextjs
         - fullstack-boilerplate-dotnet-react
         - fullstack-boilerplate-dotnet-vue
+        - fullstack-boilerplate-dotnet-react-typescript
+        - fullstack-boilerplate-dotnet-vue-typescript
         required: true
       branch-name:
         type: string
