@@ -1,12 +1,9 @@
 name: Publish test results to Alva
 on:
   push:
-    branches:
-      - '*'
-      - '*/*'
-      - '!master'
-      - '!main'
-
+    branches-ignore:
+      - master
+      - main
 jobs:
   publish-test-results:
     name: Publish test results to Alva
