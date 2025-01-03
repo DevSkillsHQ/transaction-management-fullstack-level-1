@@ -4,29 +4,8 @@ on:
   workflow_dispatch:
     inputs:
       boilerplate:
-        type: choice
+        type: string
         description: Name of boilerplate
-        options:
-        - fullstack-boilerplate-flask
-        - fullstack-boilerplate-sanic-react
-        - fullstack-boilerplate-flask-react
-        - fullstack-boilerplate-django-react
-        - fullstack-boilerplate-express-react
-        - fullstack-boilerplate-typescript-express-react
-        - fullstack-boilerplate-ruby-vue
-        - fullstack-boilerplate-ruby-ember
-        - fullstack-boilerplate-nestjs-angular
-        - fullstack-boilerplate-react-nextjs
-        - fullstack-boilerplate-dotnet-angular
-        - fullstack-boilerplate-java-springboot-vue-typescript
-        - fullstack-boilerplate-php-laravel-vue
-        - fullstack-boilerplate-java-springboot-react-typescript
-        - fullstack-boilerplate-java-springboot-angular
-        - fullstack-boilerplate-php-react-nextjs
-        - fullstack-boilerplate-dotnet-react
-        - fullstack-boilerplate-dotnet-vue
-        - fullstack-boilerplate-dotnet-react-typescript
-        - fullstack-boilerplate-dotnet-vue-typescript
         required: true
       branch-name:
         type: string
