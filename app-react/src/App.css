@@ -1,38 +1,249 @@
-.App {
-  text-align: center;
+:root {
+  --gradient-primary: linear-gradient(135deg, #6366f1 0%, #a855f7 100%);
+  --gradient-secondary: linear-gradient(135deg, #3b82f6 0%, #06b6d4 100%);
+  --primary-color: #6366f1;
+  --primary-dark: #4f46e5;
+  --accent-color: #a855f7;
+  --success-color: #22c55e;
+  --danger-color: #ef4444;
+  --text-color: #1e293b;
+  --bg-light: #f8fafc;
+  --border-color: #e2e8f0;
+  --shadow-color: rgba(51, 65, 85, 0.1);
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 1.5rem;
+  --spacing-xl: 2rem;
+  --border-radius: 12px;
+  --transition-speed: 0.3s;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+body {
+  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
   min-height: 100vh;
+}
+
+.App {
+  max-width: min(90vw, 800px);
+  margin: 0 auto;
+  padding: clamp(var(--spacing-md), 5vw, var(--spacing-xl));
+}
+
+.App h1 {
+  text-align: center;
+  color: var(--text-color);
+  margin-bottom: var(--spacing-xl);
+  font-size: clamp(1.5rem, 4vw, 2.5rem);
+  letter-spacing: -0.5px;
+  position: relative;
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: gradientFlow 6s linear infinite;
+}
+
+.App h1::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background: var(--gradient-primary);
+  border-radius: 2px;
+}
+
+form {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  gap: var(--spacing-md);
+  margin-bottom: var(--spacing-xl);
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(8px);
+  padding: var(--spacing-lg);
+  border-radius: var(--border-radius);
+  box-shadow: 0 4px 20px var(--shadow-color);
+  transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+form:focus-within {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px var(--shadow-color);
+  background: rgba(255, 255, 255, 0.9);
+}
+
+form div {
+  display: flex;
+  gap: var(--spacing-md);
+  flex-wrap: wrap;
+}
+
+input {
+  flex: 1;
+  min-width: 200px;
+  padding: var(--spacing-md);
+  border: 2px solid var(--border-color);
+  border-radius: var(--border-radius);
+  font-size: 1rem;
+  background: rgba(255, 255, 255, 0.9);
+  transition: all var(--transition-speed);
+}
+
+input:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.2);
+  background: white;
+}
+
+button[data-type="transaction-submit"] {
+  padding: var(--spacing-md) var(--spacing-lg);
+  background: var(--gradient-primary);
   color: white;
+  border: none;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: all var(--transition-speed);
+  min-width: 120px;
+  position: relative;
+  overflow: hidden;
 }
 
-.App-link {
-  color: #61dafb;
+button[data-type="transaction-submit"]::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+  transition: 0.5s;
 }
 
-@keyframes App-logo-spin {
+button[data-type="transaction-submit"]:hover::before {
+  left: 100%;
+}
+
+button[data-type="transaction-submit"]:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
+}
+
+button[data-type="transaction-submit"]:active {
+  transform: translateY(0);
+}
+
+.transactions {
+  display: grid;
+  gap: var(--spacing-md);
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+.transaction-item {
+  padding: var(--spacing-lg);
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: var(--border-radius);
+  box-shadow: 0 4px 12px var(--shadow-color);
+  transition: all var(--transition-speed);
+  animation: fadeIn 0.5s ease-out;
+  position: relative;
+  overflow: hidden;
+}
+
+.transaction-item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: var(--gradient-secondary);
+  border-radius: var(--border-radius) 0 0 var(--border-radius);
+}
+
+.transaction-item:hover {
+  transform: translateY(-2px) translateX(2px);
+  box-shadow: 0 8px 24px var(--shadow-color);
+  background: rgba(255, 255, 255, 0.9);
+}
+
+.transaction-item div {
+  margin: var(--spacing-sm) 0;
+  line-height: 1.4;
+  color: var(--text-color);
+}
+
+@media (max-width: 600px) {
+  form div {
+    flex-direction: column;
+  }
+  
+  input {
+    width: 100%;
+  }
+  
+  button[data-type="transaction-submit"] {
+    width: 100%;
+  }
+}
+
+@keyframes fadeIn {
   from {
-    transform: rotate(0deg);
+    opacity: 0;
+    transform: translateY(10px);
   }
   to {
-    transform: rotate(360deg);
+    opacity: 1;
+    transform: translateY(0);
   }
+}
+
+@keyframes gradientFlow {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Add rainbow effect on form hover */
+form:hover {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.95),
+    rgba(255, 255, 255, 0.9)
+  );
+  border-image: linear-gradient(
+    45deg,
+    #ff6b6b,
+    #feca57,
+    #48dbfb,
+    #1dd1a1,
+    #ff6b6b
+  ) 1;
+  animation: borderGradient 4s linear infinite;
+}
+
+@keyframes borderGradient {
+  0% { border-image-source: linear-gradient(45deg, #ff6b6b, #feca57, #48dbfb, #1dd1a1, #ff6b6b); }
+  25% { border-image-source: linear-gradient(45deg, #1dd1a1, #ff6b6b, #feca57, #48dbfb, #1dd1a1); }
+  50% { border-image-source: linear-gradient(45deg, #48dbfb, #1dd1a1, #ff6b6b, #feca57, #48dbfb); }
+  75% { border-image-source: linear-gradient(45deg, #feca57, #48dbfb, #1dd1a1, #ff6b6b, #feca57); }
+  100% { border-image-source: linear-gradient(45deg, #ff6b6b, #feca57, #48dbfb, #1dd1a1, #ff6b6b); }
 }
