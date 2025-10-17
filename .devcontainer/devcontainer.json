@@ -9,7 +9,7 @@
 	},
 	"features": {
 		"ghcr.io/rocker-org/devcontainer-features/apt-packages:1": {
-			"packages": "xvfb,libnss3-dev,libatk1.0-0,libatk-bridge2.0-0,libgtk-3-0,libgbm-dev"
+			"packages": "xvfb,libnss3-dev,libatk1.0-0,libatk-bridge2.0-0,libgtk-3-0,libgbm-dev,libasound2t64"
 		},
 		"ghcr.io/devcontainers/features/java:1": {
 			"version": "21"
