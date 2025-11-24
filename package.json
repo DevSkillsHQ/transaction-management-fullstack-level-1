@@ -2,11 +2,12 @@
   "name": "account-management-fullstack-level-1",
   "version": "1.0.0",
   "scripts": {
-    "build": "echo build your fullstack app here",
-    "start": "echo start your fullstack app here",
+    "build": "cd work/backend && npm install && cd ../frontend && npm install",
+    "start": "concurrently \"cd work/backend && npm start\" \"cd work/frontend && npm start\"",
     "test": "cypress run"
   },
   "devDependencies": {
-    "cypress": "^12.17.1"
+    "cypress": "^12.17.1",
+    "concurrently": "^8.2.0"
   }
 }

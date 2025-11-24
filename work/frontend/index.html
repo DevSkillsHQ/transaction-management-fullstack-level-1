@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Transaction Management</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <h1>Transaction Management</h1>
+  
+  <form id="transaction-form">
+    <label for="account-id">Account ID:</label>
+    <input 
+      id="account-id" 
+      data-type="account-id" 
+      type="text" 
+      placeholder="Enter account ID (UUID)"
+      required
+    />
+    
+    <label for="amount">Amount:</label>
+    <input 
+      id="amount" 
+      data-type="amount" 
+      type="number" 
+      step="0.01"
+      placeholder="Enter amount (positive for deposit, negative for withdrawal)"
+      required
+    />
+    
+    <input data-type="transaction-submit" type="submit" value="Submit Transaction" />
+  </form>
+  
+  <div id="transaction-list" class="transaction-list"></div>
+
+  <script src="app.js"></script>
+</body>
+</html>
