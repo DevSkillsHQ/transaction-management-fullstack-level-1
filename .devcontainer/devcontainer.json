@@ -1,5 +1,9 @@
 {
 	"name": "Alva Universal Image",
+	"image": "mcr.microsoft.com/devcontainers/universal:linux",
+	"hostRequirements": {
+        "storage": "64gb"
+    },
 	"customizations": {
 		"vscode": {
 			"extensions": [
