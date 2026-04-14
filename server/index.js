@@ -7,7 +7,7 @@ app.use(express.json());
 const cors = require('cors');
 app.use(cors());
 
-const port = 8080;
+const port = process.env.PORT || 8080;
 const transactions = [];
 
 // get health check
@@ -23,8 +23,9 @@ app.get('/transactions', (req, res) => {
 
 // post a transaction
 app.post('/transactions', (req, res) => {
+    if (!req.is('application/json')) return res.sendStatus(415);
     const { account_id, amount } = req.body;
-    if (!account_id || typeof amount !== 'number') return res.status(400).end();
+    if (!account_id || !Number.isInteger(amount)) return res.status(400).end();
 
     const transaction = {
         transaction_id: uuidv4(),
