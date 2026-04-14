@@ -2,8 +2,9 @@
   "name": "account-management-fullstack-level-1",
   "version": "1.0.0",
   "scripts": {
-    "build": "npm build",
-    "start": "npm start",
+    "build": "echo 'No build step for this simple app'",
+    "start:server": "node server/index.js",
+    "start:client": "npx http-server client -p 3000 -c-1",
     "test": "cypress run"
   },
   "devDependencies": {

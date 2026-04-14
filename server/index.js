@@ -4,7 +4,10 @@ const app = express();
 const { v4: uuidv4 } = require('uuid');
 app.use(express.json());
 
-const port = 8000;
+const cors = require('cors');
+app.use(cors());
+
+const port = 8080;
 const transactions = [];
 
 // get health check
