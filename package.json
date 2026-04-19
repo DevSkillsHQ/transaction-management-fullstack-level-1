@@ -2,11 +2,16 @@
   "name": "account-management-fullstack-level-1",
   "version": "1.0.0",
   "scripts": {
-    "build": "echo build your fullstack app here",
-    "start": "echo start your fullstack app here",
-    "test": "cypress run"
+    "install:all": "npm install --prefix src/backend && npm install --prefix src/frontend",
+    "build": "npm run install:all && npm run build --prefix src/frontend",
+    "start": "concurrently --kill-others \"npm start --prefix src/backend\" \"npm start --prefix src/frontend\"",
+    "pretest": "npx kill-port 3000 3001",
+    "test": "start-server-and-test start \"http-get://localhost:3001/ping|http-get://localhost:3000\" cypress:run",
+    "cypress:run": "cypress run"
   },
   "devDependencies": {
-    "cypress": "^12.17.1"
+    "concurrently": "^8.2.0",
+    "cypress": "^12.17.1",
+    "start-server-and-test": "^2.0.3"
   }
 }
