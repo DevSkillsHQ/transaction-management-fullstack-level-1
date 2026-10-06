@@ -16,7 +16,7 @@ Between 1 and 3 hours, plus the time to set up the codebase.
 <!--TASK_INSTRUCTIONS_START-->
 Your task is to build a fullstack app that allows the recording of financial transactions and viewing the transaction history.
 
-The backend should implement the [Accounting API](https://infra.devskills.app/accounting/api/3.1.0), which is defined in the [Open API](https://www.openapis.org/) format.
+The backend should implement the Accounting API, which is defined in the [Open API](https://www.openapis.org/) format.
 
 <details>
 <summary>Accounting API Specification</summary>
