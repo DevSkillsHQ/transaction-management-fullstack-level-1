@@ -8,6 +8,8 @@ jobs:
   publish-test-results:
     name: Publish test results to Alva
     uses: DevSkillsHQ/publish-test-results-workflow/.github/workflows/publish-test-results.yml@main
+    with:
+      python_version: '3.14'
     permissions:
       contents: write
     secrets:
