@@ -2,11 +2,17 @@
   "name": "account-management-fullstack-level-1",
   "version": "1.0.0",
   "scripts": {
-    "build": "echo build your fullstack app here",
-    "start": "echo start your fullstack app here",
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
     "test": "cypress run"
   },
+  "dependencies": {
+    "next": "^16.0.4",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0"
+  },
   "devDependencies": {
-    "cypress": "^12.17.1"
+    "cypress": "^15.7.0"
   }
 }
