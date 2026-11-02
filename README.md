@@ -42,7 +42,6 @@ The backend should implement the Accounting API, which is defined in the [Open A
           }
         },
         "required": [
-          "transaction_id",
           "account_id",
           "amount"
         ]
